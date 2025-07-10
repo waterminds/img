@@ -1,0 +1,74 @@
+<link href="https://fonts.googleapis.com/css?family=Cabin&amp;display=swap" rel="stylesheet">
+<meta charset="utf-8" />
+<style>
+    .balance_container {
+        background: rgba(173, 171, 171, 0.149);
+        align-items: center;
+        border-radius: 4px;
+        box-shadow: 10px 10px 13px -2px rgba(134, 130, 134, 0.5), -6px -6px 8px 2px rgba(253, 253, 253, 0.44);
+        width: 310px;
+        height: 200px;
+        margin: 25px auto 28px;
+    }
+
+    .balance_cell {
+        float: left;
+        width: 100px;
+        background: #e1e1eb;
+    }
+
+    .balance_container p {
+        display: inline-block;
+    }
+
+    .your_balance-text {
+        padding: 4px;
+        margin-top: 10px;
+        color: #a1a1a4;
+        font-size: .78rem;
+    }
+
+    .income_text,
+    .expense_text {
+        font-size: .78rem;
+    }
+
+    .decimal_text {
+        color: #a1a1a4;
+        font-size: .8em;
+    }
+    .decimal_text0 {
+        color: #a1a1a4;
+        font-size: .8em;
+    }
+    .income_cell,
+    .expense_cell {
+        float: left;
+        background: #e1e1eb;
+        padding-inline-start: 18px
+    }
+
+    .income_balance,
+    .expense_balance {
+        font-size: .8rem;
+        padding: 5px;
+    }
+</style>
+
+<section class="balance_container">
+    <ul class="balance_cell">
+        <p class="your_balance-text">Your Balance</p>
+        <p class="numeric_balance-2">
+            <span class="decimal_text0">$24.560</span>
+            <span class="decimal_text">,00</span>
+        </p>
+    </ul>
+    <ul class="income_cell">
+        <p class="income_text">Income</p>
+        <p class="income_balance"> 1,240 </p>
+    </ul>
+    <ul class="expense_cell">
+        <p class="expense_text">Expense</p>
+        <p class="expense_balance"> 2,449</p>
+    </ul>
+</section>

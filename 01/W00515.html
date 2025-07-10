@@ -1,0 +1,238 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.css">
+
+<style>
+    *,
+    *::after,
+    *::before {
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        -ms-box-sizing: border-box;
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+
+    html,
+    body {
+        min-height: 100%;
+    }
+
+    .bg-shadow {
+        background: #353353;
+        color: #f9f9ff;
+    }
+
+    .lc-slider-wrapper {
+        width: 100%;
+        display: flex;
+        margin-top: 70px;
+        color: #f9f9ff;
+    }
+
+    .lc-slider-container {
+        flex: 3;
+        margin: 0;
+        padding: 0;
+    }
+
+    .lc-slider {
+        position: relative;
+        padding: 5px 10px;
+        background: black;
+    }
+
+    .lc-slider:first-child {
+        margin-bottom: 7px;
+    }
+
+    .lc-slider-head {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        -ms-align-items: center;
+        align-items: center;
+        margin: 0 0 10px 0;
+    }
+
+    .lc-slider-content {
+        width: 100%;
+        padding: 15px 0;
+        position: relative;
+        display: block;
+    }
+
+    .lc-slider-amount-span,
+    .lc-slider-month-span {
+        width: 90px;
+        height: 90px;
+        line-height: 20px;
+        text-align: center;
+        position: relative;
+        margin: 0;
+        padding-top: 20px;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        -ms-box-sizing: border-box;
+        box-sizing: border-box;
+        transform-origin: center center;
+        font-size: 26px;
+        font-weight: 700;
+        font-style: normal;
+        line-height: normal;
+        border-radius: 100%;
+        color: #ff4c60;
+        border: 5px solid #5e5c7f;
+        background: #f9f9ff;
+    }
+
+    .lc-slider-amount-span::after {
+        content: "EUR";
+        display: block;
+        font-size: 14px;
+        letter-spacing: 0.07em;
+        margin-top: -2px;
+    }
+
+    .lc-slider-month-span::after {
+        content: "Mes.";
+        display: block;
+        font-size: 14px;
+        letter-spacing: 0.07em;
+        margin-top: -2px;
+    }
+
+    .lc-slider-footer {
+        width: 100%;
+        padding: 7px 45px 7px 0;
+        display: flex;
+        justify-content: space-between;
+        -ms-align-items: center;
+        align-items: center;
+    }
+
+    .lc-slider-payment-container {
+        flex: 1;
+        height: 200px;
+        background: pink;
+    }
+
+    .ui-slider .ui-slider-handle {
+        box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.08);
+        border: 14px solid #f9f9ff;
+        height: 53px;
+        width: 53px;
+        border-radius: 30px;
+        background: #ff4c60;
+        cursor: pointer;
+        margin-top: -9px;
+    }
+
+    .ui-slider .ui-slider-handle:focus {
+        outline: none;
+    }
+
+    .ui-slider-horizontal {
+        width: 100%;
+        cursor: pointer;
+        margin: 0;
+        border-radius: 5px;
+    }
+
+    .ui-widget-content {
+        width: 100%;
+        height: 25px;
+        cursor: pointer;
+        animate: 0.2s;
+        box-shadow: 0px 0px 0px #000000, 0px 0px 0px #0d0d0d;
+        background: #f9f9ff;
+        border-radius: 5px;
+        border: none !important;
+    }
+
+    .ui-slider-horizontal .ui-slider-range {
+        width: 100%;
+        background-color: #ff4c60;
+        height: 25px;
+        margin: 0;
+        border-radius: 5px;
+    }
+</style>
+
+
+<div class="container">
+    <div class="lc-slider-wrapper">
+        <div class="lc-slider-container">
+            <div class="lc-slider">
+                <div class="lc-slider-head">
+                    <span class="lc-slider-amount-span-txt">Choose your loan amount</span>
+                    <span id="lc-slider-amount-span" class="lc-slider-amount-span">4200</span>
+                </div>
+                <div class="lc-slider-content">
+                    <div id="lc-slider-amount"
+                        class="lc-slider-amount ui-slider ui-corner-all ui-slider-horizontal ui-widget ui-widget-content">
+                        <div class="ui-slider-range ui-corner-all ui-widget-header ui-slider-range-min"
+                            style="width: 64%;"></div><span tabindex="0"
+                            class="ui-slider-handle ui-corner-all ui-state-default" style="left: 64%;"></span>
+                    </div>
+                </div>
+                <div class="lc-slider-footer">
+                    <span class="lc-slider-amount-span-min">1000€</span>
+                    <span class="lc-slider-amount-span-max">6000€</span>
+                </div>
+            </div>
+            <div class="lc-slider">
+                <div class="lc-slider-head">
+                    <span class="lc-slider-month-span-txt">Choose a maturity period</span>
+                    <span id="lc-slider-month-span" class="lc-slider-month-span">60</span>
+                </div>
+                <div class="lc-slider-content">
+                    <div id="lc-slider-month"
+                        class="lc-slider-month ui-slider ui-corner-all ui-slider-horizontal ui-widget ui-widget-content">
+                        <div class="ui-slider-range ui-corner-all ui-widget-header ui-slider-range-min"
+                            style="width: 100%;"></div><span tabindex="0"
+                            class="ui-slider-handle ui-corner-all ui-state-default" style="left: 100%;"></span>
+                    </div>
+                </div>
+                <div class="lc-slider-footer">
+                    <span class="lc-slider-month-span-min">6 months</span>
+                    <span class="lc-slider-month-span-max">60 months</span>
+                </div>
+            </div>
+        </div>
+        <div class="lc-slider-payment-container">
+
+        </div>
+    </div>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+<script id="rendered-js">
+    $(document).ready(function () {
+        $("#lc-slider-amount").slider({
+            range: "min",
+            value: 6000,
+            min: 1000,
+            max: 6000,
+            step: 100,
+            slide: function (event, ui) {
+                $("#lc-slider-amount-span").html(ui.value);
+            }
+        });
+
+        $("#lc-slider-amount-span").html($("#lc-slider-amount").slider("value"));
+
+        $("#lc-slider-month").slider({
+            range: "min",
+            value: 6,
+            min: 6,
+            max: 60,
+            step: 6,
+            slide: function (event, ui) {
+                $("#lc-slider-month-span").html(ui.value);
+            }
+        });
+
+        $("#lc-slider-month-span").html($("#lc-slider-month").slider("value"));
+    });
+    //# sourceURL=pen.js
+</script>

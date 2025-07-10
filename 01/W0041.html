@@ -1,0 +1,94 @@
+<meta charset="utf-8" />
+<style>
+    * {
+        box-sizing: border-box;
+    }
+
+    nav {
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 100px;
+        height: 100%;
+        background: #f3f3f3;
+        transition: 0.3s;
+        overflow: hidden;
+        z-index: 10;
+    }
+
+
+    nav ul {
+        position: relative;        
+        padding: 0;
+        margin: 0;
+        /* display: block; */
+        list-style: none;
+    }
+
+    nav ul li {
+        position: relative;
+        width: 160px;
+        height: 60px;
+        margin: 0;
+        padding: 0;
+        opacity: 0.4;
+        transition: transform 0.1s;
+    }
+
+    nav ul li i {
+        position: absolurelativete;
+        color: rgb(243, 3, 3);
+        width: 100px;
+        display: inline-block;
+    }
+
+    nav ul li p {
+        position: relative;
+        color: rgb(243, 3, 3);
+        font-family: sans-serif;
+        background-color: #354148;
+        display: inline;
+        width: 55px;
+
+        color: rgb(39, 146, 102);
+        text-shadow: 2px 2px 3px rgba(255, 255, 255, 0.5);
+    }
+
+    .material-icons.md-light {
+        /* background-color: #354148; */
+        color: rgb(243, 3, 3);
+        text-shadow: 2px 2px 3px rgba(255, 255, 255, 0.5);
+    }
+
+    nav:hover {
+        width: 160px;
+        box-shadow: 4px 4px 4px #CFDBE8,
+            8px 8px 8px #CFDBE8;
+    }
+
+
+    nav ul li:hover {
+        opacity: 1;
+    }
+</style>
+<nav id="menu">
+    <ul>
+        <li>
+            <i class="material-icons md-light">account_circle</i>
+            <p>profile</p>
+        </li>
+        <li>
+            <i class="material-icons md-light">home</i>
+            <p>home</p>
+        </li>
+        <li>
+            <i class="material-icons md-light">build</i>
+            <p>build</p>
+        </li>
+        <li>
+            <i class="material-icons md-light">backup</i>
+            <p>backup</p>
+        </li>
+
+    </ul>
+</nav>

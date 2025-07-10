@@ -1,0 +1,110 @@
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons|Material+Icons+Round" rel="stylesheet">
+<link rel="stylesheet"
+    href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
+<link href="https://fonts.googleapis.com/css?family=Cabin&amp;display=swap" rel="stylesheet">
+<meta charset="utf-8" />
+<style>
+    html {
+        box-sizing: border-box;
+    }
+
+    *,
+    *:before,
+    *:after {
+        box-sizing: inherit;
+    }
+
+    .container {
+        max-width: 366px;
+        margin: auto;
+        background: #e1e1eb;
+        user-select: none;
+    }
+
+    /* History */
+    .history {
+        color: #a1a1a4;
+        max-width: 310px;
+        margin: auto;
+    }
+
+    .text {
+        display: inline-block;
+        width: 40%;
+        font-size: .78rem;
+        font-weight: 200;
+    }
+
+    .meatball {
+        display: inline-block;
+        width: 50%;
+        position: relative;
+        right: 0;
+        align-items: center;
+        font-size: 1.2rem;
+        letter-spacing: 1.8px;
+        margin: 0;
+    }
+
+    .investment {
+        border: 1px solid rgba(173, 171, 171, 0.149);
+        width: 325px;
+        height: 25px;
+        display: grid;
+        background: #e1e1eb;
+    }
+
+    /* square button */
+    .button {
+        height: 43px;
+        width: 43px;
+        padding: 14px;
+        border-radius: 8px;
+        position: relative;
+        display: inline-block;
+        top: 20px;
+        left: 30px;
+        box-shadow:
+            inset 3px 3px 7px rgba(136, 165, 191, 0.48),
+            inset -3px -3px 7px #FFFFFF;
+    }
+
+    .button:active {
+        box-shadow:
+            inset 3px 3px 7px rgba(114, 114, 114, 0.74),
+            inset -3px -3px 7px #FFFFFF;
+    }
+
+    .investment_text {
+        display: inline-block;
+        width: 40%;
+        position: relative;
+        padding-top: 14px;
+        font-weight: 700;
+    }
+
+    .investment .transfer {
+        display: inline-block;
+        width: 40%;
+        position: relative;
+        font-size: .78rem;
+        top: 0px;
+        color: #a1a1a4;
+    }
+</style>
+
+<div class="container">
+    <!-- History -->
+    <div class="history">
+        <p class="text">LAST HISTORY</p>
+        <p class="meatball">•••</p>
+    </div>
+    <!-- Investment History cont -->
+    <section class="investment">
+        <span class="button">
+            <i class="las la-plus-circle"></i>
+        </span>
+        <p class="investment_text">Investment Bitcoin</p>
+        <span class="transfer">Transfer #981</span>
+    </section>
+</div>

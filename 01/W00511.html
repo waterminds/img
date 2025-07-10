@@ -1,0 +1,128 @@
+<meta charset="utf-8" />
+<style>
+    .container {
+        max-width: 366px;
+        margin: auto;
+        background: #e1e1eb;
+    }
+
+    /* Visa Card */
+    .personal_card {
+        font-size: .78rem;
+        font-weight: 200;
+        color: #a1a1a4;
+        margin: 0 0 19px 28px;
+    }
+
+    .visa_card_container {
+        display: grid;
+        max-width: 310px;
+        margin: auto;
+        background: #e1e1eb;
+        border: 1px solid rgba(255, 255, 255, 0.20);
+        border-radius: 4px;
+        padding: 20px 18px;
+        box-shadow:
+            10px 10px 13px -2px rgba(134, 130, 134, 0.5),
+            -6px -6px 8px 2px rgba(253, 253, 253, 0.44);
+        grid-template-areas: "balance visa" "cardnumber cardnumber" "holder expiry"
+    }
+
+    .visa_icon {
+        width: 47px;
+    }
+
+    .numeric_balance-2 {
+        font-size: 1.1rem;
+        font-weight: 500;
+        -webkit-text-stroke: .2px;
+        color: #464646;
+    }
+
+    .numeric_balance {
+        font-size: 1.1rem;
+        font-weight: 500;
+        -webkit-text-stroke: .2px;
+        color: #464646;
+    }
+
+    .income_text {
+        color: #464646;
+    }
+
+    .avail_balance,
+    .holder_text,
+    .button_text {
+        font-size: .53rem;
+        letter-spacing: 1px;
+        font-weight: 300;
+        color: #a1a1a4;
+        padding-top: 4px;
+    }
+
+    .card_number {
+        letter-spacing: 2.1px;
+        font-size: 1.1rem;
+        font-weight: 500;
+        -webkit-text-stroke: .2px;
+        color: #464646;
+    }
+
+    .pin {
+        letter-spacing: 5px;
+        width: 60px;
+        display: inline-block;
+    }
+
+    ._pin {
+        letter-spacing: 5px;
+        width: 60px;
+        display: inline-block;
+    }
+
+    .expiry_text {
+        margin-right: 3.3px;
+        font-size: .53rem;
+        letter-spacing: 1px;
+        font-weight: 300;
+        color: #a1a1a4;
+        padding-top: 4px;
+        color: #464646;
+    }
+
+    .owner_name,
+    .expiry_date {
+        color: #464646;
+        margin-top: 23px;
+        font-size: .77rem;
+        letter-spacing: .7px;
+        text-transform: uppercase;
+        line-height: 2;
+    }
+</style>
+
+<div class="container">
+    <section class="visa_card">
+        <h3 class="personal_card">PERSONAL CARD</h3>
+        <div class="visa_card_container">
+            <p class="avail_balance">Available Balance</p>
+            <img src="https://res.cloudinary.com/dvhndpbun/image/upload/q_auto:eco/v1584302122/visa-card-logo-png-transparent_pljppj.png"
+                class="visa_icon">
+            <h2 class="numeric_balance">$24.560</h2>
+            <p class="pins">
+                <span class="pin">••••</span>
+                <span class="pin">••••</span>
+                <span class="pin">••••</span>
+            </p>
+            <span class="_pin">3521</span>
+            <div class="owner">
+                <h3 class="holder_text">HOLDER</h3>
+                <p class="owner_name">enouwem jim</p>
+            </div>
+            <div class="expiry">
+                <h3 class="expiry_text">EXPIRY</h3>
+                <p class="expiry_date">07/20</p>
+            </div>
+        </div>
+    </section>
+</div>

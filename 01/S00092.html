@@ -1,0 +1,85 @@
+<meta charset="utf-8" />
+<style>
+    body {
+        background-color: #f5f6f7;
+        color: #4a5568;
+        padding: 1rem 2rem;
+    }
+
+    .w-100 {
+        width: 100%;
+    }
+
+    .container {
+        height: 300px;
+        width: 300px;
+        padding: 1rem 1.5rem;
+        border-radius: 3px;
+        box-shadow:
+            -4px -2px 4px 0px #ffffff,
+            4px 2px 6px 0px #DFE4EA;
+    }
+
+    .toggle-group label,
+    button {
+        color: inherit;
+        position: relative;
+        background: inherit;
+        outline: none;
+        border: none;
+        box-shadow:
+            -4px -2px 4px 0px #ffffff,
+            4px 2px 6px 0px #DFE4EA;
+        border-radius: 3px;
+        cursor: pointer;
+        text-transform: uppercase;
+    }
+
+    .toggle-group input:checked+label::after,
+    button:focus::after,
+    button:active::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        border-radius: 3px;
+        box-shadow:
+            2px 2px 2px 0px #DFE4EA inset,
+            -2px -2px 2px 0px #ffffff inset;
+    }
+
+    .toggle-group label {
+        padding: 0.75rem;
+        text-align: center;
+        border-radius: 8px;
+    }
+
+    .toggle-group label:first-of-type {
+        margin-right: 1rem;
+    }
+
+    .toggle-group input {
+        display: none;
+    }
+
+    .toggle-group input:checked+label::after {
+        border-radius: 8px;
+    }
+
+    #btntransactions {
+        padding: 0.75rem;
+    }
+</style>
+<div class="container">
+    <h1 class="">History</h1>
+    <div class="toggle-group">
+        <input id="today-date" type="radio" name="date-choose">
+        <label for="today-date" class="t4">Today</label>
+        <input id="yesterday-date" type="radio" name="date-choose" checked="">
+        <label for="yesterday-date" class="t4">Yesterday</label>
+    </div>
+
+    <button id="btntransactions" class="w-100">Show my transactions</button>
+</div>

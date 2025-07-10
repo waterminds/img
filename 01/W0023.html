@@ -1,0 +1,54 @@
+<meta charset="utf-8" />
+<style>
+    .location-container {
+        width: 250px;
+        margin-top: 80px;
+        padding: 20px 30px;
+        border-radius: 5px;
+        height: 250px;
+        overflow: hidden;
+        transition: all ease 0.5s;
+        background: #F2F3F7;
+        box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.25);
+    }
+
+    .drop-arrow {
+        display: block;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        float: right;
+        transition: all ease 0.2s;
+        cursor: pointer;
+        background: #F2F3F7;
+        box-shadow: -3px -1px 5px #FFFFFF, 3px 1px 5px #C4C4C4;
+    }
+
+    .location {
+        height: 65px;
+        margin: 30px 0;
+        border-radius: 15px;
+    }
+
+    .location.location--selected {
+        box-shadow: inset -3px -2px 5px #FFFFFF, inset 3px 2px 5px #C4C4C4;
+    }
+
+    .location {
+        background: #F2F3F7;
+        box-shadow: -3px -2px 5px #FFFFFF, 3px 2px 5px #C4C4C4;
+    }
+</style>
+
+<div id="wrapper">
+    <div class="location-container opened dark">
+        <div class="container--header">
+            <div class="drop-arrow button--pushed">
+            </div>
+        </div>
+        <div class="location location--selected">
+        </div>
+        <div class="location" location="Sydney">
+        </div>
+    </div>
+</div>

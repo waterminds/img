@@ -1,0 +1,160 @@
+<meta charset="utf-8" />
+<style>
+    .history {
+        position: relative;
+    }
+
+    .history::before {
+        content: "";
+        left: 0px;
+        top: 0px;
+        position: absolute;
+        width: 50px;
+        height: 50px;
+        /* background: #e1e1eb; */
+        border: 5px solid #ff0000;
+        border-right: 0px solid transparent;
+        box-shadow:
+            -1px 1px 0px 0px #676767,
+            1px 1px 0px 0px #646464 inset;
+    }
+
+    .history::after {
+        content: "";
+        width: 210px;
+        height: 50px;
+        left: 80px;
+        top: 0px;
+        position: absolute;
+        display: inline-block;
+        /* background: #e1e1eb; */
+        border: 5px solid #ff0000;
+        border-left: 0px solid transparent;
+        box-shadow:
+            1px 1px 0px 0px #676767,
+            -1px 1px 0px 0px #646464 inset;
+    }
+
+    .text {
+        display: inline-block;
+        width: 40%;
+        font-size: .78rem;
+        font-weight: 200;
+    }
+
+    .meatball {
+        display: inline-block;
+        width: 50%;
+        position: relative;
+        right: 0;
+        align-items: center;
+        font-size: 1.2rem;
+        letter-spacing: 1.8px;
+        margin: 0;
+    }
+</style>
+
+<div class="copy">
+    <div class="history">
+        <p class="text">LAST HISTORY</p>
+        <p class="meatball">•••</p>
+    </div>
+</div>
+<div class="copy2">
+    .history {
+        position: relative;
+    }
+
+    .history::before {
+        content: "";
+        left: 0px;
+        top: 0px;
+        position: absolute;
+        width: 50px;
+        height: 50px;
+        /* background: #e1e1eb; */
+        border: 5px solid #ff0000;
+        border-right: 0px solid transparent;
+        box-shadow:
+            -1px 1px 0px 0px #676767,
+            1px 1px 0px 0px #646464 inset;
+    }
+
+    .history::after {
+        content: "";
+        width: 210px;
+        height: 50px;
+        left: 80px;
+        top: 0px;
+        position: absolute;
+        display: inline-block;
+        /* background: #e1e1eb; */
+        border: 5px solid #ff0000;
+        border-left: 0px solid transparent;
+        box-shadow:
+            1px 1px 0px 0px #676767,
+            -1px 1px 0px 0px #646464 inset;
+    }
+
+    .text {
+        display: inline-block;
+        width: 40%;
+        font-size: .78rem;
+        font-weight: 200;
+    }
+
+    .meatball {
+        display: inline-block;
+        width: 50%;
+        position: relative;
+        right: 0;
+        align-items: center;
+        font-size: 1.2rem;
+        letter-spacing: 1.8px;
+        margin: 0;
+    }
+</div>
+<textarea id="desc" rows="12"></textarea>
+<div class="div">div</div>
+<div class="style">css</div>
+<script src="/js/jquery-1.8.2.min.js"></script>
+<script>
+    $(".div").click(function () {
+        $("#desc").val($(".copy").html());
+        $("#desc").select();
+        document.execCommand('copy');
+    });
+
+
+    $(".style").click(function () {
+        $("#desc").val($(".copy2").html());
+        $("#desc").select();
+        document.execCommand('copy');
+    });
+</script>
+
+<style>
+    textarea,.copy2 {
+        width: 0px;
+        height: 0px;
+        opacity: 0;
+    }
+
+    .div,
+    .style {
+        position: relative;
+        float: left;
+        margin-top: 10px;
+        width: 50px;
+        height: 30px;
+        border: 1px solid #ccc;
+        text-align: center;
+        line-height: 30px;
+    }
+
+    .copy {
+        position: relative;
+        display: inline-block;
+        background-color: #f0f0f0;
+    }
+</style>

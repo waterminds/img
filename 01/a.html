@@ -1,0 +1,477 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script src="http://code.jquery.com/jquery-1.8.2.min.js" type="text/javascript"></script>
+
+<style>
+    .tv {
+        width: 540px;
+        height: 1080px;
+
+        position: absolute;
+    }
+
+    .tv .video {
+        width: 540px;
+        height: 300px;
+        position: fixed;
+        z-index: 10;
+    }
+
+    .tv iframe {
+        width: 540px;
+        height: 100%;
+    }
+
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    a {
+        text-decoration: none;
+    }
+
+    /*-----------------------------------------------title*/
+    .section {
+        position: fixed;
+        top: 30px;
+        font-size: 24px;
+        width: 540px;
+        z-index: 10;
+        height: 30px;
+    }
+
+    .section .list {
+        position: fixed;
+        top: 300px;
+        width: 540px;
+        height: 920px;
+    }
+
+    .section .list>li {
+        color: rgb(0, 0, 0);
+        width: 90px;
+        height: 840px;
+        line-height: 40px;
+        float: left;
+        background-color: rgb(255, 255, 255);
+        list-style: none;
+    }
+
+    .list a {
+        width: 100%;
+        height: 100px;
+        position: relative;
+        top: 0px;
+
+        float: left;
+        overflow: hidden;
+        margin: 1px;
+        background-color: rgb(255, 255, 255);
+        border-radius: 5px;
+    }
+
+    a.aa {
+        position: relative;
+        color: rgb(0, 0, 0);
+        text-align: center;
+        width: 90px;
+        height: 40px;
+        left: -0px;
+        background-color: rgb(255, 255, 255);
+
+    }
+
+    a.active {
+        background-color: rgb(0, 0, 0, 0.05);
+    }
+
+    /*-----------------------------------------------wrap*/
+    .tab {
+        position: absolute;
+        top: 40px;
+        left: 200px;
+        height:calc(100vh - 300px);
+        width: 540px;
+        opacity: 0;
+        transition: 1.4s;
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
+
+    .on .tab {
+        z-index: 3;
+        left: 0;
+        opacity: 1;
+    }
+
+    .on .aa {
+        color: #ff2f00c1;
+        font-weight: bold;
+    }
+
+    img {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 150px;
+        border-radius: 2%;
+    }
+
+    a .info {
+        position: absolute;
+        top: 0;
+        left: 150px;
+        width: 70%;
+        padding: 15px;
+        font-size: 24px;
+        color: rgb(88, 88, 88);
+        line-height: 1.5;
+    }
+</style>
+<script type="text/javascript" src="tab.js"></script>
+<script>
+
+</script>
+<script type="text/javascript">
+    $(function () {
+        let _w = window.innerWidth, _h = window.innerHeight;
+
+        if (_w < _h) {
+            let r = _w / 540;
+            let ww = 540 * (r - 1) / 2;
+            let hh = 1080 * (r - 1) / 2;
+
+
+            console.log(r);
+            $(".tv").css("transform", "scale(" + r + ")");
+            $(".tv").css("left", ww + "px");
+            $(".tv").css("top", hh + "px");
+
+
+            // $('.ss').html(_w+";"+_h+";"+r+"----"+ww);
+
+        }
+        $('.tab>a').click(function () {// 點圖切換
+            let str = "https://www.youtube.com/embed/" + $(this).attr("rel");
+            $("#obj1").attr("src", str);
+            $('.tab>a').removeClass("active");
+            $(this).addClass("active");
+            return false;
+        });
+
+        $('div.tab0>a').eq(0).click(); //預設第一個影片
+
+        $('.section').aa_tab();
+        $(".section .list>li").eq(0).click();
+
+    });
+</script>
+<div class="ss">
+
+</div>
+
+<div class="tv">
+    <div class="video">
+        <iframe id="obj1" src="" frameborder="0" allow="accelerometer; autoplay; encrypted-media; " allowfullscreen>
+        </iframe>
+    </div>
+    <div class="section">
+        <ul class="list">
+            <li class="on">
+                <a class="aa" href="#">新手</a>
+                <div class="tab tab0">
+                    <a href="https://www.youtube.com/watch?v=aLY3nSC5a84" rel="aLY3nSC5a84" class="active">
+                        <img src="http://img.youtube.com/vi/aLY3nSC5a84/2.jpg">
+                        <div class="info">拉小腿筋—救慢性病.解酸痛</div>
+                    </a>
+
+                    <a href="https://www.youtube.com/watch?v=SSMTCUk1zWk" rel="SSMTCUk1zWk">
+                        <img src="http://img.youtube.com/vi/SSMTCUk1zWk/2.jpg">
+                        <div class="info">揹娃娃—脊椎回正、健康恢復</div>
+                    </a>
+
+                    <a href="https://www.youtube.com/watch?v=s8Dm5aCZU9s" rel="s8Dm5aCZU9s">
+                        <img src="http://img.youtube.com/vi/s8Dm5aCZU9s/2.jpg">
+                        <div class="info">(初級)原地超慢跑—救慢性病</div>
+                    </a>
+
+                    <a href="https://www.youtube.com/watch?v=IByOBHxhMSQ" rel="IByOBHxhMSQ">
+                        <img src="http://img.youtube.com/vi/IByOBHxhMSQ/2.jpg">
+                        <div class="info">頂天立地—強氧喚醒細胞</div>
+                    </a>
+
+                    <a href="hhttps://www.youtube.com/watch?v=zJ09qgDF6Yg" rel="zJ09qgDF6Yg">
+                        <img src="http://img.youtube.com/vi/zJ09qgDF6Yg/2.jpg">
+                        <div class="info">平抬腿—舒緩膝蓋關節痛</div>
+                    </a>
+
+                    <a href="hhttps://www.youtube.com/watch?v=KdfwgeblihU" rel="KdfwgeblihU">
+                        <img src="http://img.youtube.com/vi/KdfwgeblihU/2.jpg">
+                        <div class="info">初學必讀(問答式)安全練功法</div>
+                    </a>
+
+                    <a href="https://www.youtube.com/watch?v=xuMwYLIQmv4" rel="xuMwYLIQmv4">
+                        <img src="http://img.youtube.com/vi/xuMwYLIQmv4/2.jpg">
+                        <div class="info">初學必讀～練功原理與注意事項</div>
+                    </a>
+                </div>
+            </li>
+            <li>
+                <a class="aa" href="#"> 老弱</a>
+                <div class="tab tab2">
+                    <a href="https://www.youtube.com/watch?v=xoa_BxyCGEk" rel="xoa_BxyCGEk" class="active">
+                        <img src="http://img.youtube.com/vi/xoa_BxyCGEk/2.jpg">
+                        <div class="info">年邁．重症．慢性病的練功法門</div>
+                    </a>
+
+                    <a href="https://www.youtube.com/watch?v=msHd21l-og4" rel="msHd21l-og4">
+                        <img src="http://img.youtube.com/vi/msHd21l-og4/2.jpg">
+                        <div class="info">病重.老邁.體虛的還陽練功方式</div>
+                    </a>
+
+                    <a href="https://www.youtube.com/watch?v=e4Qkkmj9Z7A" rel="e4Qkkmj9Z7A">
+                        <img src="http://img.youtube.com/vi/e4Qkkmj9Z7A/2.jpg">
+                        <div class="info">慢性病.體虛.老邁復健之路</div>
+                    </a>
+
+                    <a href="https://www.youtube.com/watch?v=mzVpSb_sNmE" rel="mzVpSb_sNmE">
+                        <img src="http://img.youtube.com/vi/mzVpSb_sNmE/2.jpg">
+                        <div class="info">自癒功能啟動才能救健康</div>
+                    </a>
+
+                    <a href="https://www.youtube.com/watch?v=z4HyJbIsaIQ" rel="z4HyJbIsaIQ">
+                        <img src="http://img.youtube.com/vi/z4HyJbIsaIQ/2.jpg">
+                        <div class="info">自癒功能啟動才能救健康</div>
+                    </a>
+
+                    <a href="https://www.youtube.com/watch?v=jFA_Yj2RKxI" rel="jFA_Yj2RKxI">
+                        <img src="http://img.youtube.com/vi/jFA_Yj2RKxI/2.jpg">
+                        <div class="info">慢性病與元氣差</div>
+                    </a>
+
+                    <a href="https://www.youtube.com/watch?v=dNirbrwIvRY" rel="dNirbrwIvRY">
+                        <img src="http://img.youtube.com/vi/dNirbrwIvRY/2.jpg">
+                        <div class="info">醫不好的慢性病根源</div>
+                    </a>
+
+                    <a href="https://www.youtube.com/watch?v=vz3GgRJ433s" rel="vz3GgRJ433s">
+                        <img src="http://img.youtube.com/vi/vz3GgRJ433s/2.jpg">
+                        <div class="info">病症根本在心情</div>
+                    </a>
+
+                    <a href="https://www.youtube.com/watch?v=idkXamhMTas" rel="idkXamhMTas">
+                        <img src="http://img.youtube.com/vi/idkXamhMTas/2.jpg">
+                        <div class="info">為何有運動😓身體還是不會好?</div>
+                    </a>
+                </div>
+            </li>
+            <li>
+                <a class="aa" href="#">拉筋</a>
+                <div class="tab tab3">
+                    <a href="https://www.youtube.com/watch?v=6-okQM_eMh0" rel="6-okQM_eMh0" class="active">
+                        <img src="http://img.youtube.com/vi/6-okQM_eMh0/2.jpg">
+                        <div class="info">拉筋功法—初學者必讀心法</div>
+                    </a>
+
+                    <a href="https://www.youtube.com/watch?v=DvN3c7C9OUE" rel="DvN3c7C9OUE">
+                        <img src="http://img.youtube.com/vi/DvN3c7C9OUE/2.jpg">
+                        <div class="info">拉筋．還陽的修護過程</div>
+                    </a>
+
+                    <a href="https://www.youtube.com/watch?v=yy4n7WQnBOA" rel="yy4n7WQnBOA">
+                        <img src="http://img.youtube.com/vi/yy4n7WQnBOA/2.jpg">
+                        <div class="info">反手壓.顧五臟六腑✨</div>
+                    </a>
+
+                    <a href="https://www.youtube.com/watch?v=8mbUgQk9Mt4" rel="8mbUgQk9Mt4">
+                        <img src="http://img.youtube.com/vi/8mbUgQk9Mt4/2.jpg">
+                        <div class="info">揹娃娃的功效</div>
+                    </a>
+
+                    <a href="https://www.youtube.com/watch?v=AFxsL0kUtGM" rel="AFxsL0kUtGM">
+                        <img src="http://img.youtube.com/vi/AFxsL0kUtGM/2.jpg">
+                        <div class="info">背姓娃的效能</div>
+                    </a>
+
+                    <a href="https://www.youtube.com/watch?v=e0BmsP88310" rel="e0BmsP88310">
+                        <img src="http://img.youtube.com/vi/e0BmsP88310/2.jpg">
+                        <div class="info">背娃娃要領</div>
+                    </a>
+
+                    <a href="https://www.youtube.com/watch?v=19SDmAcG-SE" rel="19SDmAcG-SE">
+                        <img src="http://img.youtube.com/vi/19SDmAcG-SE/2.jpg">
+                        <div class="info">拉小腿筋的功效</div>
+                    </a>
+
+                    <a href="https://www.youtube.com/watch?v=i8EokZ7qLrI" rel="i8EokZ7qLrI">
+                        <img src="http://img.youtube.com/vi/i8EokZ7qLrI/2.jpg">
+                        <div class="info">拉腳筋的重點</div>
+                    </a>
+
+                    <a href="https://www.youtube.com/watch?v=7ludNQ8LkvM" rel="7ludNQ8LkvM">
+                        <img src="http://img.youtube.com/vi/7ludNQ8LkvM/2.jpg">
+                        <div class="info">拉小腿筋的重點</div>
+                    </a>
+
+                    <a href="https://www.youtube.com/watch?v=QDJDnycb_Ko" rel="QDJDnycb_Ko">
+                        <img src="http://img.youtube.com/vi/QDJDnycb_Ko/2.jpg">
+                        <div class="info">下盤拉筋技巧.筋長一寸💪健康多十年</div>
+                    </a>
+                </div>
+            </li>
+            <li>
+                <a class="aa" href="#"> 超慢跑</a>
+                <div class="tab tab4">
+                    <a href="https://www.youtube.com/watch?v=Mt2-vrQZlrY" rel="Mt2-vrQZlrY" class="active">
+                        <img src="http://img.youtube.com/vi/Mt2-vrQZlrY/2.jpg">
+                        <div class="info">超慢跑-初學者姿勢動作</div>
+                    </a>
+
+                    <a href="https://www.youtube.com/watch?v=ilkzRjeUllE" rel="ilkzRjeUllE">
+                        <img src="http://img.youtube.com/vi/ilkzRjeUllE/2.jpg">
+                        <div class="info">(初級)原地超慢跑💪</div>
+                    </a>
+
+                    <a href="https://www.youtube.com/watch?v=sw-MtrprT_k" rel="sw-MtrprT_k">
+                        <img src="http://img.youtube.com/vi/sw-MtrprT_k/2.jpg">
+                        <div class="info">猿猴式超慢跑要領</div>
+                    </a>
+
+                    <a href="https://www.youtube.com/watch?v=1OeNB4AA3Sg" rel="1OeNB4AA3Sg">
+                        <img src="http://img.youtube.com/vi/1OeNB4AA3Sg/2.jpg">
+                        <div class="info">超慢跑-收功的效能</div>
+                    </a>
+
+                    <a href="https://www.youtube.com/watch?v=fHsRxAUK8PI" rel="fHsRxAUK8PI">
+                        <img src="http://img.youtube.com/vi/fHsRxAUK8PI/2.jpg">
+                        <div class="info">人體骨架的重要</div>
+                    </a>
+
+                    <a href="https://www.youtube.com/watch?v=O5KVOmXZvs4" rel="O5KVOmXZvs4">
+                        <img src="http://img.youtube.com/vi/O5KVOmXZvs4/2.jpg">
+                        <div class="info">超慢跑-開始3-5分暖身</div>
+                    </a>
+
+                    <a href="https://www.youtube.com/watch?v=QbbA1t0qkOI" rel="QbbA1t0qkOI">
+                        <img src="http://img.youtube.com/vi/QbbA1t0qkOI/2.jpg">
+                        <div class="info">超慢跑-左右轉頭</div>
+                    </a>
+
+                    <a href="https://www.youtube.com/watch?v=b4AcQ7r3eBo" rel="b4AcQ7r3eBo">
+                        <img src="http://img.youtube.com/vi/b4AcQ7r3eBo/2.jpg">
+                        <div class="info">超慢跑-握拳放</div>
+                    </a>
+
+                    <a href="https://www.youtube.com/watch?v=NAzD2KQ-7vE" rel="NAzD2KQ-7vE">
+                        <img src="http://img.youtube.com/vi/NAzD2KQ-7vE/2.jpg">
+                        <div class="info">超慢跑配合呼吸</div>
+                    </a>
+
+                    <a href="https://www.youtube.com/watch?v=rCktnecnKds" rel="rCktnecnKds">
+                        <img src="http://img.youtube.com/vi/rCktnecnKds/2.jpg">
+                        <div class="info">如何用內力超慢跑</div>
+                    </a>
+                </div>
+            </li>
+            <li>
+                <a class="aa" href="#">修復</a>
+                <div class="tab tab5">
+                    <a href="https://www.youtube.com/watch?v=05OIAHObS0c" rel="05OIAHObS0c" class="active">
+                        <img src="http://img.youtube.com/vi/05OIAHObS0c/2.jpg">
+                        <div class="info">整椎.解除腰椎滑脫.與壓迫(一)</div>
+                    </a>
+
+                    <a href="https://www.youtube.com/watch?v=IP5yIIinIzQ" rel="IP5yIIinIzQ">
+                        <img src="http://img.youtube.com/vi/IP5yIIinIzQ/2.jpg">
+                        <div class="info">整椎.解除腰椎滑脫.與壓迫(二)</div>
+                    </a>
+
+                    <a href="https://www.youtube.com/watch?v=zJ09qgDF6Yg" rel="zJ09qgDF6Yg">
+                        <img src="http://img.youtube.com/vi/zJ09qgDF6Yg/2.jpg">
+                        <div class="info">平抬腿👣舒緩膝蓋關節痛</div>
+                    </a>
+
+                    <a href="https://www.youtube.com/watch?v=1Z8o06Xolc8" rel="1Z8o06Xolc8">
+                        <img src="http://img.youtube.com/vi/1Z8o06Xolc8/2.jpg">
+                        <div class="info">腰椎滑脫👉拉筋.自癒好了</div>
+                    </a>
+
+                    <a href="https://www.youtube.com/watch?v=So4qDhDoCh4" rel="So4qDhDoCh4">
+                        <img src="http://img.youtube.com/vi/So4qDhDoCh4/2.jpg">
+                        <div class="info">聚氧.還陽祛寒.除體內陰濕💪</div>
+                    </a>
+
+                    <a href="https://www.youtube.com/watch?v=o3khbOGBgp0" rel="o3khbOGBgp0">
+                        <img src="http://img.youtube.com/vi/o3khbOGBgp0/2.jpg">
+                        <div class="info">拉筋.救腰酸背痛.慢性病功法💪</div>
+                    </a>
+
+                    <a href="https://www.youtube.com/watch?v=c31kt6Eck28" rel="c31kt6Eck28">
+                        <img src="http://img.youtube.com/vi/c31kt6Eck28/2.jpg">
+                        <div class="info">意念與修復力</div>
+                    </a>
+
+                    <a href="https://www.youtube.com/watch?v=3SnLpI3rSNo" rel="3SnLpI3rSNo">
+                        <img src="http://img.youtube.com/vi/3SnLpI3rSNo/2.jpg">
+                        <div class="info">心律不整的平衡</div>
+                    </a>
+
+                    <a href="https://www.youtube.com/watch?v=v-yhs1UmR8o" rel="v-yhs1UmR8o">
+                        <img src="http://img.youtube.com/vi/v-yhs1UmR8o/2.jpg">
+                        <div class="info">早起喝溫熱開水的重要</div>
+                    </a>
+
+                    <a href="https://www.youtube.com/watch?v=MdUNG-EoByo" rel="MdUNG-EoByo">
+                        <img src="http://img.youtube.com/vi/MdUNG-EoByo/2.jpg">
+                        <div class="info">肩頸.骨架回正救健康</div>
+                    </a>
+
+                    <a href="https://www.youtube.com/watch?v=ysKI_Fu4jEk" rel="ysKI_Fu4jEk">
+                        <img src="http://img.youtube.com/vi/ysKI_Fu4jEk/2.jpg">
+                        <div class="info">身體還陽.病體不上身😄</div>
+                    </a>
+
+                    <a href="https://www.youtube.com/watch?v=82H9tYhXrp4" rel="82H9tYhXrp4">
+                        <img src="http://img.youtube.com/vi/82H9tYhXrp4/2.jpg">
+                        <div class="info">“踮腳尖走路”的秘密✌️</div>
+                    </a>
+                </div>
+            </li>
+            <li>
+                <a class="aa" href="#">呼吸</a>
+                <div class="tab tab5">
+                    <a href="https://www.youtube.com/watch?v=2ERUV-RqrGA" rel="2ERUV-RqrGA" class="active">
+                        <img src="http://img.youtube.com/vi/2ERUV-RqrGA/2.jpg">
+                        <div class="info">收功—三種呼吸法</div>
+                    </a>
+
+                    <a href="https://www.youtube.com/watch?v=fxzAH-TmAMQ" rel="fxzAH-TmAMQ">
+                        <img src="http://img.youtube.com/vi/fxzAH-TmAMQ/2.jpg">
+                        <div class="info">吐氣多寡.決定含氧量高低💪</div>
+                    </a>
+
+                    <a href="https://www.youtube.com/watch?v=NzZOx79FaUw" rel="NzZOx79FaUw">
+                        <img src="http://img.youtube.com/vi/NzZOx79FaUw/2.jpg">
+                        <div class="info">呼吸的重要與練習</div>
+                    </a>
+
+                    <a href="https://www.youtube.com/watch?v=jau-s6MB2Ns" rel="jau-s6MB2Ns">
+                        <img src="http://img.youtube.com/vi/jau-s6MB2Ns/2.jpg">
+                        <div class="info">收功的要領與重點</div>
+                    </a>
+
+                    <a href="https://www.youtube.com/watch?v=02D_CrTt7Us" rel="02D_CrTt7Us">
+                        <img src="http://img.youtube.com/vi/02D_CrTt7Us/2.jpg">
+                        <div class="info">笑笑功的效能</div>
+                    </a>
+
+                    <a href="https://www.youtube.com/watch?v=WPruRBfSI0M" rel="WPruRBfSI0M">
+                        <img src="http://img.youtube.com/vi/WPruRBfSI0M/2.jpg">
+                        <div class="info">神龍擺尾+笑笑功</div>
+                    </a>
+                </div>
+            </li>
+            <p><b></b></p>
+        </ul>
+    </div>
+</div>

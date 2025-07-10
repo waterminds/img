@@ -1,0 +1,70 @@
+<meta charset="utf-8">
+<meta http-equiv="x-ua-compatible" content="ie=edge,chrome=1">
+<!-- 360 使用Google Chrome Frame -->
+<meta name="renderer" content="webkit">
+<title></title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- 清除默认样式 -->
+<link rel="stylesheet" href="css/common.css">
+<link rel="stylesheet" href="css/main.css">
+
+<div class="number-normal">
+    <div class="data"></div>
+</div>
+
+<!-- 深度自定义demo -->
+<div class="number-diy">
+    <div class="data" data-number="21468159"></div>
+</div>
+<button>222222</button>
+<script src="js/jquery.min.js"></script>
+<script src="js/jquery.rollNumber.js"></script>
+<script src="js/main.js"></script>
+<script>
+    $('.number-normal .data').rollNumber({
+        number: 123456,   //必需：显示数据
+        // speed: 100,    //可选：每个数字滚动时长，取值"slow"、"fast" 或毫秒，默认：500
+        // interval: 100, //可选：前后两个数字间隔时长，毫秒，默认：100
+        // rooms: 9,      //可选：显示总位数，需大于等于数据长度，大于数据长度时前面补0，默认：等于数据长度
+        // space: 90,     //可选：每个数字宽度，默认为：高度/2
+        // symbol: ',',   //可选：千分位占位符，默认：false
+        fontStyle: {      //可选：数字字体样式
+            'font-size': 100,    //可选：默认14
+            color: '#FF0000',    //可选：默认black
+            // 其他文字样式，标准css均可以设置
+            // 'font-family': 'LetsgoDigital',
+            // 'font-weight': 700
+        }
+    })
+
+    $diy = $('.number-diy .data');
+    $diy.rollNumber({
+        number: $diy[0].dataset.number,
+        speed: 500,
+        interval: 200,
+        rooms: 9,
+        space: 110,
+        symbol: ',',
+        fontStyle: {
+            'font-size': 102,
+            'font-family': 'LetsgoDigital',
+        }
+    })
+    $('button').click(function () {
+        $('.number-normal .data').rollNumber({
+        number: 45156,   //必需：显示数据
+        // speed: 100,    //可选：每个数字滚动时长，取值"slow"、"fast" 或毫秒，默认：500
+        // interval: 100, //可选：前后两个数字间隔时长，毫秒，默认：100
+        // rooms: 9,      //可选：显示总位数，需大于等于数据长度，大于数据长度时前面补0，默认：等于数据长度
+        // space: 90,     //可选：每个数字宽度，默认为：高度/2
+        // symbol: ',',   //可选：千分位占位符，默认：false
+        fontStyle: {      //可选：数字字体样式
+            'font-size': 100,    //可选：默认14
+            color: '#FF0000',    //可选：默认black
+            // 其他文字样式，标准css均可以设置
+            // 'font-family': 'LetsgoDigital',
+            // 'font-weight': 700
+        }
+    })
+    });
+</script>

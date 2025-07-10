@@ -1,0 +1,44 @@
+
+<link href="https://fonts.googleapis.com/css?family=Cabin&amp;display=swap" rel="stylesheet">
+<meta charset="utf-8" />
+<style>
+    .container {
+        max-width: 366px;
+        margin: auto;
+        background: #e1e1eb;
+    }
+    /* Btn section */
+    .btn_container {
+        display: grid;
+        grid-template-columns: repeat(4, auto);
+        height: 80px;
+        max-width: 310px;
+        margin: auto;
+        justify-items: center;
+        margin-top: 40px;
+    }
+    /* round button style */
+    .neumorph_button {
+        height: 43px;
+        width: 43px;
+        border-radius: 100vh;
+        display: grid;
+        align-items: center;
+        justify-items: center;
+        box-shadow: inset 3px 3px 7px rgba(136, 165, 191, 0.48), inset -3px -3px 7px #FFFFFF;
+    }
+
+    .neumorph_button:active {
+        box-shadow: inset 3px 3px 7px rgba(114, 114, 114, 0.74), inset -3px -3px 7px #FFFFFF;
+    }
+</style>
+
+<div class="container">
+    <section class="btn_container">
+        <span class="neumorph_button"><i class="las la-search"></i></span>
+        <span class="neumorph_button"><i class="las la-sliders-h"></i></span>
+        <span class="neumorph_button"><i class="las la-exchange-alt"></i></span>
+        <span class="neumorph_button"><i class="las la-plus-circle"></i></span>
+
+    </section>
+</div>

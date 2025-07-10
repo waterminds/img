@@ -1,0 +1,90 @@
+<style>
+    * {
+        box-sizing: border-box;
+    }
+
+    .content {
+        width: 500px;
+    }
+
+    .shape {
+        background: pink;
+        width: 200px;
+        height: 200px;
+        float: left;
+        shape-outside: url("/images/p13.png");
+        shape-margin: 10px
+    }
+</style>
+<meta charset="utf-8" />
+
+
+
+<div class="content">
+    <img class="shape" src="/images/p13.png" alt="">
+    <p>階層式樣式表（英語：Cascading Style
+        Sheets，縮寫：CSS；又稱串樣式列表、級聯樣式表、串接樣式表、階層式樣式表）是一種用來為結構化文件（如HTML文件或XML應用）添加樣式（字型、間距和顏色等）的電腦語言，由W3C定義和維護。CSS3現在已被大部分現代瀏覽器支援，而下一版的CSS4仍在開發中。
+    </p>
+    <p>CSS不僅可以靜態地修飾網頁，還可以配合各種手稿語言動態地對網頁各元素進行格式化。CSS 能夠對網頁中元素位置的排版進行像素級精確控制，支援幾乎所有的字型字號樣式，擁有對網頁物件和模型樣式編輯的能力。 </p>
+</div>
+
+
+<style>
+    .card-iconboxEven {
+        position: absolute;
+        background: #FBC700;
+        top: 0;
+        right: 0;
+        width: 24px;
+        height: 46px;
+        z-index: 1;
+    }
+
+    .card-iconinfo {
+        text-align: center;
+        font-weight: 700;
+        font-size: 14px;
+        height: 15px;
+    }
+
+    .card-iconinfo i {
+        top: 4px;
+        right: 1px;
+        position: absolute;
+        display: block;
+        width: 20px;
+        height: 20px;
+        /* background: #0f9a34; */
+        background-image: url(top-13.png);
+        background-repeat: no-repeat;
+        background-size: contain;
+    }
+
+    .card-iconinfoEven-num {
+        white-space: normal;
+        color: #fff;
+        text-align: center;
+        font-weight: 700;
+        font-size: 14px;
+        width: 100%;
+        position: relative;
+        top: 10px;
+        z-index: 1;
+    }
+
+    .card-iconboxEven:after {
+        content: "";
+        bottom: -10px;
+        position: absolute;
+        border-width: 12px;
+        border-radius: 54px;
+        border-color: transparent #fbc701;
+        width: 24px;
+        height: 24px;
+        background: #FBC700;
+    }
+</style>
+<div class="card-iconboxEven">
+    <div class="card-iconinfo"><i></i></div>
+    <div class="card-iconinfoEven-num">7</div>
+</div>
