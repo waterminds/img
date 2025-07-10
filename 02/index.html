@@ -1,0 +1,75 @@
+﻿
+    <meta charset="UTF-8">
+    <script></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=0.5, maximum-scale=10">
+
+    <script type="text/javascript" src="/js/jquery-1.8.2.min.js"></script>
+    <script src="/js/start.js">	</script>
+    <link href="/css/reset.css" rel="stylesheet" type="text/css">
+    <link href="/css/basic.css" rel="stylesheet" type="text/css">
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            var t = new Date().getTime();
+
+            $.ajax({
+                type: "GET",
+                url: "hotel.json",
+                dataType: "json",
+                success: ShowData,
+                error: function (data) {
+                    alert("系統錯誤!");
+                },
+            });
+            // var t2 = new Date().getTime();
+            // t2 = t2 - t;
+            // console.log("需時:" + t2);
+
+            var regionTitle = new Array(); //分區名稱
+            var counter = new Array(); //分區編號
+            var regionData = new Array(); //分區旅館資料
+
+            function ShowData(data) {
+                for (let i = 0, n = data["data"].length; i < n; i++) { //cnt: data總長度
+                    let getRegion = data["data"][i][4].substring(0, data["data"][i][4].indexOf("區", 0) + 1);
+                    if (counter[getRegion] == undefined) {//indexOf("區",0) 取得'區'的位置編號
+                        counter[getRegion] = regionData.length; //紀錄分區編號
+
+                        regionData.push(new Array()); //新增一筆空紀錄
+                        regionTitle[counter[getRegion]] = getRegion; //紀錄分區名稱
+                    }
+                    regionData[counter[getRegion]].push(data["data"][i]); //將整筆資料存入
+                }
+                console.log("regionData");
+                console.log(regionData);
+                console.log(regionData['4'][3]);
+                console.log(regionData['4']);
+
+                console.log("counter");
+                console.log(counter['臺北市大同區']);
+                console.log(counter);
+
+                console.log("regionTitle");
+                console.log(regionTitle);
+                console.log(regionTitle[4]);
+
+                strHTML = '';
+                for (var i = 0; i < regionTitle.length; i++) {
+                    for (var k = 0; k < regionData[counter[regionTitle[i]]].length; k++) {
+                        // strHTML += '<div class="guestbook unit">';
+                        // strHTML += '   <div class="card ">';
+                        // strHTML += '     <div class="card-body ">';
+                        strHTML += '        <div class="author">' + regionData[i][k][0] + '</div>';
+                        // strHTML += '        <h2 class="subject">' + data[i].subject + '</h2>';
+                        // strHTML += '        <div class="context ">' + data[i].content + '</div>';
+                        // strHTML += '        <div class="date">' + data[i].date + '</div>';
+                        // strHTML += '</div></div></div>';
+                    }
+                }
+                $(".test").html(strHTML);
+
+            }
+        });
+    </script>
+<body class=" ">
+    <div class="test"></div>
